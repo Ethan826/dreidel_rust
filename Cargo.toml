@@ -1,0 +1,7 @@
+[package]
+name = "dreidel"
+version = "0.1.0"
+authors = ["Ethan Kent <ekent@jd11.law.harvard.edu>"]
+
+[dependencies]
+rand = "0.3"
