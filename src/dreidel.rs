@@ -10,13 +10,14 @@ pub enum Dreidel {
 }
 
 impl Dreidel {
-    pub fn spin(mut rng: &mut Rng, mut stake: &mut usize, mut pot: &mut usize) {
-        sample(
+    pub fn spin(mut rng: &mut Rng, mut stake: &mut usize, mut pot: &mut usize) -> Dreidel {
+        let result = sample(
             &mut rng,
             vec![Dreidel::Nun, Dreidel::Gimel, Dreidel::He, Dreidel::Shin],
             1,
-        )[0]
-            .handle(&mut stake, &mut pot)
+        )[0];
+        result.handle(&mut stake, &mut pot);
+        result
     }
 
     fn handle(&self, stake: &mut usize, pot: &mut usize) {
